@@ -42,6 +42,7 @@ func GetIp() string {
 	return ipString
 }
 
+//https://gist.github.com/ankanch/8c8ec5aaf374039504946e7e2b2cdf7f
 func GetPublicIp() string {
 	url := "https://api.ipify.org?format=text" // we are using a pulib IP API, we're using ipify here, below are some others
 	// https://www.ipify.org
