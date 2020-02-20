@@ -88,7 +88,7 @@ func GetRankingManager() *RankingManager {
 
 // Init ...
 func (manager *RankingManager) Init() {
-	ip := GetPublicIp()
+	ip := GetIp()
 	fmt.Print(ip)
 	ip = ip + ":6379"
 

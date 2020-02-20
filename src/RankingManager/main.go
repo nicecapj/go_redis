@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+
+	redigo "github.com/gomodule/redigo/redis"
 )
 
 func main() {
@@ -14,7 +16,12 @@ func main() {
 	rankingManager.SetScroe("lee", 100)
 
 	highScore, err := rankingManager.GetHighscore(0, 10, true, false)
-	if err != nil {
-		fmt.Print(highScore)
+	if err == nil {
+		fmt.Println(highScore)
+	}
+
+	count := len(highScore)
+	for x := 0; x < count; x++ {
+		fmt.Println(redigo.String(highScore[x], err))
 	}
 }
